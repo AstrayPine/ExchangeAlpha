@@ -10,8 +10,11 @@ import { useState } from 'react';
 const Navbar = () => {
   const [navigationState, toggleNavigationState] = useState(false);
   return (
-    <nav className=' flexBetween max-container 
-    padding-container relative z-30 py-5'>
+    <nav className={`flexBetween max-container 
+    padding-container relative z-30 py-5
+    ${
+      navigationState ? 'h-full w-full bg-slate-100' : 'hidden'
+    }`}>
         <Link href="/">
         <Image src="/hilink-logo.svg" alt="logo"
          width={74} height={29}/>
@@ -24,7 +27,21 @@ const Navbar = () => {
             {link.label}
             </Link>
           ))}
-        </ul>        
+        </ul>
+        <div className={`flex ${
+          navigationState ? 'flex' : 'hidden'
+        }`}
+        >
+          <ul className='lg:hidden h-full gap-12 '>
+            {NAV_LINKS.map((link) =>(
+              <Link href={link.href} key={link.key} className='regular-16
+            text-gray-50 flexCenter cursor-point pb-1.5 transition-all
+              hover:font-bold'>
+              {link.label}
+              </Link>
+            ))}
+          </ul>    
+        </div>        
         <div className='lg:flexCenter hidden'>
           <Button
           type="button"

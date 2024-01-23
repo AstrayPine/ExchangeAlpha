@@ -20,7 +20,7 @@ function Hero() {
       height={50}
       className="absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
       />
-      <h1 className='bold-52 lg:bold-88'>Putuk Truno Camp Area</h1>
+      <h1 className='bold-52 lg:bold-88'>Germany Camping Hotspots</h1>
       <p className='regular-16 mt-6 text-gray-30 xl:max-w-[520]'>
       We want to be on each of your journeys seeking the satisfaction
       of seeing the incorruptible beauty of nature.
@@ -50,7 +50,8 @@ function Hero() {
             title='Download App' 
             variant='btn_green'
           />
-          <Button type='button' 
+          <Button 
+            type='button' 
             title='How we work?' 
             icon='/play.svg'
             variant='btn_white_green'
