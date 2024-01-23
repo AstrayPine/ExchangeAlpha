@@ -1,10 +1,14 @@
+"use client"
 import { NAV_LINKS } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Button from './Button'
+import { useState } from 'react';
 
-const navbar = () => {
+
+const Navbar = () => {
+  const [navigationState, toggleNavigationState] = useState(false);
   return (
     <nav className=' flexBetween max-container 
     padding-container relative z-30 py-5'>
@@ -29,15 +33,36 @@ const navbar = () => {
           variant="btn_dark_green"
           />
         </div>
-        <Image
-        src="menu.svg"
-        alt="menu"
-        width={32}
-        height={32}
-        className='inline-block cursor-pointer lg:hidden'
-        />
+        {/* HAMBURGER MENU MOBILE */}
+        <div
+        className='md:hidden inline-block cursor-pointer lg:hidden'>
+          <button
+          className='p-2 text-gray-700 rounded-md outline-none focus:border-gray-400'
+          onClick={() => toggleNavigationState(!navigationState)}
+          > 
+          {navigationState ? (
+            <Image 
+            src="/close2.svg" 
+            alt="close" 
+            width={24} 
+            height={24}
+            className='inline-block cursor-pointer lg:hidden'
+            />
+            ) : (
+          <Image
+            src="menu.svg"
+            alt="menu"
+            width={32}
+            height={32}
+            className='inline-block cursor-pointer lg:hidden'
+            />
+          )}
+          </button>
+          
+        </div>
+
     </nav>
   )
 }
 
-export default navbar
+export default Navbar
