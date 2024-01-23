@@ -1,9 +1,21 @@
+import Features from '@/components/Features'
+import GetApp from '@/components/GetApp'
+import Camp from '@/components/Camp'
+import Hero from '@/components/Hero'
+import Guide from '@/components/Guide'
+import { Cambay } from 'next/font/google'
 import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div><h1 className='font-bold text-teal-500 text-2x1'>Hello world</h1></div>
-    </main>
+    // React Fragment used to group elements when you dont need additional classes
+    // Saves Code
+    <>
+      <Hero/>
+      <Camp/>
+      <Guide/>
+      <Features/>
+      <GetApp/>
+    </>
   )
 }
