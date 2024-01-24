@@ -28,7 +28,7 @@ function Guide() {
       </div>
       <div
         className="flexCenter max-container relative
-       w-full border-2 "
+       w-full"
       >
         <Image
           src="/boat.png"
