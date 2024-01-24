@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-function guide() {
+function Guide() {
   return (
     <section className="flexCeter flex-col">
       <div
@@ -68,4 +68,4 @@ function guide() {
   );
 }
 
-export default guide;
+export default Guide;
